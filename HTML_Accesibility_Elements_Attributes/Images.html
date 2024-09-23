@@ -1,0 +1,101 @@
+<!--ALT SHOULD DESCRIBE THE IMAGE IF THE IMAGE LOAD FAILS-->
+
+<!--YOU NEED TO PUT THE FULL ABSOLUTE URL IF THE IMAGE IT'S IN OTHER SERVERS-->
+
+<!--Images-->
+<h2>Images</h2>
+<img src="https://th.bing.com/th/id/OIP.WX1xQjBblIwa6M3l2USP9AHaHa?rs=1&pid=ImgDetMain"
+    width="200" height="150" alt="Valentines Day">
+    <!--you set the source where the image it's stored-->
+    <!--use width and height for the images dimension-->
+    <p>Image Valentines</p>
+
+<h4>Image formats</h4>
+<!--High quality and less size images-->
+<un>
+    <li><b>Gif: </b>Well compressing, limited 256 colors, can be transparent, multiple frames for movies</li>
+    <li><b>SVG: </b>Vectors for logos and icons, very small size.</li>
+    <li><b>JPG: </b>Image format for compressing photos</li>
+    <li><b>PNG: </b>Images where you need a part transparent, good compression.</li>
+</un>
+
+<!--BETTER WAY TO STABLISH STYLE-->
+<img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;">
+<!--WIDTH == ANCHO-->
+<!--HEIGHT == ALTO-->
+<!--WIDTH AND HEIGHT ARE SET IN PIXELS,  this will not be overridden by the style in the head:-->
+
+
+
+<!----------------------------------------------------->
+<h4>Responsive Images</h4>
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-480.jpg"
+    alt="Responsive Dog"
+    width="480" height="360"
+    srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-960.jpg 2x,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-1440.jpg 3x,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-1920.jpg 4x"
+>
+<p>This help us a lot to send different sizes of the images and the browser will chose the best one</p>
+<h4>Responsive With</h4>
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-480.jpg"
+    alt="Responsive Dog"
+    width="480" height="360"
+    srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-480.jpg 480w,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-960.jpg 960w,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-1440.jpg 1440w,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-1920.jpg 1920w"
+>
+
+<!--Pictures-->
+<h2>Responsive Pictures</h2>
+<!--Show different pictures in different sizes-->
+<picture>
+    <source media="(min-with:600px)"
+            srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-320.jpg 320w,
+            https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-480.jpg 480w,
+            https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-720.jpg 720w,
+            https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-960.jpg 960w,
+            https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-1440.jpg 1440w,
+            https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-1920.jpg 1920w,"
+    >
+    <source srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-320.jpg 320w,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-480.jpg 480w,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-720.jpg 720w,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-960.jpg 960w,"
+    >
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-480.jpg"
+    alt="Responsive Dog"
+    width="480" height="360">
+</picture>
+
+<picture>
+  <source media="(min-width: 650px)" srcset="img_food.jpg">
+  <source media="(min-width: 465px)" srcset="img_car.jpg">
+  <img src="img_girl.jpg">
+</picture>
+<!--There are some browsers that not support all image formats, in that case it'll take the fist format it recognizes-->
+
+
+<!----------------------------------------------------->
+<!--Figures-->
+<h2>Figures</h2>
+<figure>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/maggie2.png"
+    alt="Shiny black dog in the sun"
+    width="480" height="360">
+
+    <figcaption>
+        Maggie the dog enjoys resting in a field, after a long day of chasing squirrels.
+    </figcaption>
+</figure>
+
+<figure>
+  <img src="pic_trulli.jpg" alt="Trulli" style="width:100%">
+  <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+</figure>
+
+<p>
+    <img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+    A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.  
+    </p>

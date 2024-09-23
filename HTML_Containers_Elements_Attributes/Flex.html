@@ -1,0 +1,27 @@
+<!--
+FLEX
+The CSS Flexbox Layout Module was introduced to make it easier to design flexible responsive layout structure without using float or positioning.
+To make the CSS flex method work, surround the <div> elements with another <div> element and give it the status as a flex container.
+-->
+<style>
+    .flex-container {/*PRINCIPAL CONTAINER*/
+      display: flex;
+      background-color: DodgerBlue;
+    }
+    .flex-container > div {/*SECONDARIES CONTAINERS*/
+      background-color: #f1f1f1;
+      margin: 10px;
+      padding: 20px;
+      font-size: 30px;
+      /*width:33%;*/
+    }
+    </style>
+    <body>
+        <h1>Create a Flex Container</h1>
+        <div class="flex-container">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>  
+        </div>
+    </body>
+    

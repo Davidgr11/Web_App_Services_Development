@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es-mx" dir="ltr">
+    <head>
+        <title>Structure</title>
+
+        <meta charset="UTF-8">
+        <meta name="description" content="html structure">
+        <meta name="viewport" content="width=device-width. initial-scale=1.0">
+
+        <style>
+            h2 {
+                color:crimson;
+            }
+        </style>
+    </head>
+    <body>
+        <!--Action it's what it's performed when the form is submitted-->
+        <!--Autocomplete to look for the past values-->
+        <form action="urlServer" target="_blank" method="post" autocomplete="on" validate>
+            <!--_blank(NEW TAB),_self(CURRENT TAB),_parent(PARENT FRAME),_top(BODY OF WINDOW)-->
+            <!--for and id must be the same-->
+
+            <!--TEXT-->
+            <h2>TEXT Simple Form</h2>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="frame"><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" value="Doe" readonly><br>
+            <!--Readondly attribute it's used for read-only input field-->
+            <!--Value attribute it's used to determine an initial value-->
+            <!--RADIO-->
+            <h2>RADIO Which web language you prefer? </h2>
+            <input type="radio" id="rhtml" name="favlang" value="html">
+            <label for="rhtml">HTML</label><br>
+            <input type="radio" id="rcss" name="favlang" value="css" checked>
+            <label for="rcss">CSS</label><br>
+            <input type="radio" id="rjs" name="favlang" value="javascript">
+            <label for="rjs">JavaScript</label><br>
+            <!--CHECKBOX-->
+            <h2>CHEKBOX Which databases you know? </h2>
+            <input type="checkbox" id="ckmongo" name="knowDB" value="Mongo">
+            <label for="ckmongo">Mongo DB</label><br>
+            <input type="checkbox" id="cksql" name="knowDB">
+            <label for="cksql">SQL Lite</label><br>
+            <input type="checkbox" id="ckfirestore" name="knowDB">
+            <label for="ckfirestore">Firestore</label><br>
+            <!--SUBMIT-->
+            <h2>SUBMIT</h2>
+            <input type="submit" value="Submit">
+            <br><br>
+            <input type="image" src="https://th.bing.com/th/id/R.4f302a5342b5fd2c3abb850b91e0b9b8?rik=td7tltWg3lpZ8w&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fgreen-check-mark-icon-transparent-background%2fgreen-check-mark-icon-transparent-background-9.png&ehk=W0yLDvHLxk8oT6EhqiuigKhl6HtJQ7lEPmsGv%2fZCii0%3d&risl=&pid=ImgRaw&r=0" alt="Submit" width="48" height="48">
+            <br><br>
+            <!--SELECT-->
+            <h2>SELECT</h2>
+            <label for="cars">Choose a car:</label>
+            <select id="cars" name="cars">
+		            <optgroup label="Carros de gama media"
+                <!--size="3" multiple-->
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="versa" selected>Versa</option>
+                </optgroup>
+            </select>
+            <br><br>
+            <!--TEXT AREA-->
+            <h2>TEXT AREA</h2>
+            <textarea name"comentarios" rows="10" cols="40">
+                Quisiera solicitar...
+            </textarea>
+            <!--style="width:200px; height:600px;-->
+            <br><br>
+            <!--BUTTON-->
+            <h2>BUTTON</h2>
+            <button type="button" onclick="alert('Comprobación de alerta')">Click Me!</button>
+            <br> <input type="button" onclick="alert('Hola Mundo!')" value="Acceder">
+            <br><br>
+            <!--FIELDSET and LEYEND-->
+            <h2>FIELDSET and LEYEND</h2>
+            <fieldset>
+                <legend>Registro:</legend>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value="John"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+            <br><br>
+            <!--DATALIST-->
+            <h2>DATALIST</h2>
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            <br><br>
+            <!--OUTPUT-->
+            <h2>OUTPUT</h2>
+            <form action="/action_page.php"
+  oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+            <input type="range"  id="a" name="a" value="50">
+            100 +
+            <input type="number" id="b" name="b" value="50">
+            =
+            <output name="x" for="a b"></output>
+            <br><br>
+            <input type="submit">
+            </form>
+            <br><br>
+        </form>
+
+        <form id="form1">
+            <h1 style="color:royalblue">INPUT types and attributes</h1>
+            <br><br><h2>TEXT</h2>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" disabled><br>
+            <!--Disabled attribute it's used to define the input field as unusable and unclicable-->
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" size="10">
+            <!--Size attribute it's used to set the size of the input-->
+            <input type="reset" value="Reset">
+
+            <br><br><h2>PASSWORD</h2>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" autofocus><br>
+            <!--Autofocus attribute it's used to specify which input needs to get focused when the page loads-->
+            <label for="pwd">Password:</label><br>
+            <input type="password" id="pwd" name="pwd" maxlength="8" minlength="6">
+            <!--Maxlength attibute it's used to set the number of characters accepted-->
+
+            <br><br><h2>CHOOSE COLOR</h2>
+            <label for="favcolor">Select your favorite color:</label>
+            <input type="color" id="favcolor" name="favcolor">
+
+            <br><br><h2>DATE</h2>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+
+            <br><br><h2>DATES RANGE</h2>
+            <label for="datemax">Enter a date before 1980-01-01:</label>
+            <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+            <label for="datemin">Enter a date after 2000-01-01:</label>
+            <input type="date" id="datemin" name="datemin" min="2000-01-02">
+
+            <br><br><h2>DATE AND TIME</h2>
+            <label for="birthdaytime">Birthday (date and time):</label>
+            <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+
+            <br><br><h2>EMAIL</h2>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email">
+
+            <br><br><h2>FILE</h2>
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile" multiple accept="image/*">
+            <!--Multiple attribute it's used to enter more than one value in input field-->
+
+            <br><br><h2>IMAGE</h2>
+            <input type="image" src="https://th.bing.com/th/id/R.4f302a5342b5fd2c3abb850b91e0b9b8?rik=td7tltWg3lpZ8w&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fgreen-check-mark-icon-transparent-background%2fgreen-check-mark-icon-transparent-background-9.png&ehk=W0yLDvHLxk8oT6EhqiuigKhl6HtJQ7lEPmsGv%2fZCii0%3d&risl=&pid=ImgRaw&r=0" alt="Envio" width="48" height="48">
+            
+            <br><br><h2>HIDDEN</h2>
+            <input type="hidden" id="custId" name="custId" value="3487">
+            
+            <br><br><h2>MONTH</h2>
+            <label for="bdaymonth">Birthday (month and year):</label>
+            <input type="month" id="bdaymonth" name="bdaymonth">
+
+            <br><br><h2>NUMBER</h2>
+            <label for="quantity">Quantity (between 1 and 5):</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="5">
+            <input type="number" id="quantity" name="quantity" step="any"><!--decimals-->
+
+            <br><br><h2>STEPS</h2>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="0" max="100" step="10" value="30">
+            <!--Step attribute define the "jumps" of the numeric value-->
+
+            <br><br><h2>RANGE</h2>
+            <label for="vol">Volume (between 0 and 50):</label>
+            <input type="range" id="vol" name="vol" min="0" max="50">
+
+            <br><br><h2>SEARCH</h2>
+            <label for="gsearch">Search Google:</label>
+            <input type="search" id="gsearch" name="gsearch">
+
+            <br><br><h2>TEL</h2>
+            <label for="phone">Enter your phone number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="55-1234-5678" 
+	            pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" required><br>
+            <small>Format: 55-1234-5678</small>
+            <!--Pattern attribute it's used to check and validate the input [accepted values]{number of characters}-->
+            <!--Placeholder attribute it's used to describe what the input it's expected to receive-->
+            <!--Required attribute means that the input must be filled out-->
+
+            <br><br><h2>TIME</h2>
+            <label for="appt">Select a time:</label>
+            <input type="time" id="appt" name="appt"><br>
+            <input type="submit" value="Enviar hora exacta">
+            
+            <br><br><h2>URL</h2>
+            <label for="homepage">Add your homepage:</label>
+            <input type="url" id="homepage" name="homepage">
+
+            <br><br><h2>WEEK</h2>
+            <label for="week">Select a week:</label>
+            <input type="week" id="week" name="week">
+
+        </form>
+        <!--To refeer that that input belongs to the form id 1-->
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" form="form1">
+
+        <h1 style="color:greenyellow;">Overrides</h1>
+        <!--OVERRIDES THE ACTION ATTRIBUTE-->
+        <h2>Formaction</h2>
+        <form action="/action_page.php">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <input type="submit" value="Submit">
+            <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+        </form>
+
+        <!--OVERRIDES THE ENCTYPE ATTRIBUTE-->
+        <h2>Formenctype</h2>
+        <form action="/action_page_binary.asp" method="post">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="submit" value="Submit">
+            <input type="submit" formenctype="multipart/form-data"
+            value="Submit as Multipart/form-data">
+        </form>
+
+        <!--OVERRIDES THE METHOD ATTRIBUTE-->
+        <h2>Formmethod</h2>
+        <form action="/action_page.php" method="get">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <input type="submit" value="Submit using GET">
+            <input type="submit" formmethod="post" value="Submit using POST">
+        </form>
+
+        <!--OVERRIDES THE TARGET ATTRIBUTE-->
+        <h2>Formtarget</h2>
+        <form action="/action_page.php">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <input type="submit" value="Submit">
+            <input type="submit" formtarget="_blank" value="Submit to a new window/tab">
+        </form>
+
+        <!--OVERRIDES THE VALIDATE ATTRIBUTE-->
+        <h2>Formnovalidate</h2>
+        <form action="/action_page.php">
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <input type="submit" value="Submit">
+            <input type="submit" formnovalidate="formnovalidate"
+            value="Submit without validation">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        th, td {
+            border:2px solid rgb(163, 209, 250); /*DEFINE THE BORDER*/
+            border-collapse:collapse; /*JUST ONE LINE*/
+            /*border-radius: 5px;*/ /*ROUND CORNERS*/
+        }
+        th, td {
+            text-align:center;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding-right: 40px;
+        }
+        th {
+            background-color: #f3e69e;
+        }
+        table {
+            border-spacing: 2px;
+        }
+        /*tr:nth-child(even) { CHANGE COLOR FOR EACH ROW
+            background-color: #D6EEEE;
+        }*/
+        /*td:nth-child(even), th:nth-child(even) { CHANGE COLOR FOR EACH COLUMN
+            background-color: #D6EEEE;
+        }*/
+        /*tr { DIVIDER
+            border-bottom: 1px solid  rgb(163, 209, 250);;
+        }*/
+        tr:hover { /*CHANGE COLOR WHITH MOUSE*/
+            background-color: #D6EEEE;
+        }
+    </style>
+    <body>
+        <table style="width:100%;"><!--RESIZABLE TO THE SCREEN-->
+            <caption>People</caption>
+            <colgroup><!--CHOOSE COLOR OF THE COLUMNS CELLS-->
+                <col span="1" style="background-color: #e2a5ec">
+                <col span="1">
+                <col span="1" style="background-color: #beeca5">
+                <!--<col span="3" style="visibility: collapse">  HIDE COLUMNS-->
+              </colgroup>
+            <tr>
+                <th colspan="2" style="width:60%;">Full Name</th><!--MERGE COLUMNS AND SET SIZE %-->
+                <th>Age</th>
+            </tr>
+            <tr><!--style="height:150px"--> <!--SIZE OF A ROW-->
+                <td>Alfreds</td>
+                <td>Futterkiste</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <!--<th rowspan="2">Francisco</th>--> <!--VERTICAL HEADER-->
+                <td>Francisco</td>
+                <td>Anders</td>
+                <td><img src="https://ih1.redbubble.net/image.1580364187.3631/st,small,507x507-pad,600x600,f8f8f8.jpg" style="width:25px;height:25px;"></td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+<!--
+DOTTED
+DASHED
+SOLID
+DOUBLE
+GROOVE
+RIDGE
+INSET
+OUTSET
+NONE
+HIDDEN
+-->

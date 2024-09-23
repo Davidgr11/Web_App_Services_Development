@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <style>
+            .city {/*CLASS OF A DIVIDER*/
+                background-color: blueviolet;
+                color:azure;
+                border:2px solid black;
+                margin:10px;
+                padding:20px;
+            }
+            .cityCenter {
+                text-align: center;
+            }
+            .redText {
+                color:red;
+            }
+            #principalHeader {/*ID EXAMPLE*/
+                background-color: aquamarine;
+                color:black;
+                padding:20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="principalHeader">Cities</h1>
+        <div class="city cityCenter">
+            <!--HTML ELEMENTS CAN BELONG TO MORE THAN ONE CLASS WITH A SPACE-->
+            <h2>London</h2>
+            <p>The capital of <span class="redText">England</span>.</p>
+        </div>
+        <div class="city">
+            <h2>Paris</h2>
+            <p>The capital of <span class="redText">France</span>.</p>
+        </div>
+        <!--DIFFERENT ELEMENTS THAT SHARE A CLASS-->
+        <h2 class="city">Tokyo</h2>
+        <p class="city">Tokyo is the capital of Japan.</p>
+    </body>
+</html>
