@@ -1,0 +1,29 @@
+p {
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+  }
+  p {
+    border-style: dotted solid;
+  }
+  
+  /* Four values */
+  p {
+    border-style: dotted solid double dashed;
+  }
+  
+  /* Three values */
+  p {
+    border-style: dotted solid double;
+  }
+  
+  /* Two values */
+  p {
+    border-style: dotted solid;
+  }
+  
+  /* One value */
+  p {
+    border-style: dotted;
+  }

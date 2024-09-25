@@ -1,0 +1,4 @@
+body{
+    background-attachment: fixed; /*SE MUEVE CON EL TEXTO*/
+background-attachment: scroll; /*SE QUEDA FIJA EN SU LUGAR*/
+}

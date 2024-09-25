@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;/*general table adjustments, avoid double line*/
+  /*sets whether the table borders should be collapsed into a single border*/
+  width: 100%;/*% of the screen*/
+  border: 1px solid #ddd;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;/*border of each data and header element*/
+  padding: 8px;/*space between elements*/
+  vertical-align: middle;/*top, bottom, or middle*/
+  border-bottom: 1px solid #ddd; /*if i just want a line divider*/
+}
+/*set the default2 color for iterations*/
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+/*set the color of the register line when mouse over*/
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+/*it doesn't need padding on the sides because of the text-align*/
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /*also i can use --height: 70px;--*/
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>A Fancy Table</h1>
+<div style="overflow-x:auto;"> <!--RESPONSIVE-->
+<table id="customers">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

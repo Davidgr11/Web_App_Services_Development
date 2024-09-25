@@ -1,0 +1,17 @@
+ul.a {
+    list-style-type: circle;/*square, upper-roman, lower-alpha*/
+    list-style-image: url('sqpurple.gif');/*If i want a image*/
+    list-style-position: outside;/*or inside, to position the bullets*/
+    list-style: square inside url("sqpurple.gif");/*shorthand*/
+  }
+  
+  /*STYLE*/
+  ul {
+    background: #3399ff;
+    padding: 20px;
+  }
+  ul li {/*specify that it's the li of the ul list*/
+    background: #cce5ff;
+    color: darkblue;
+    margin: 5px;
+  }

@@ -1,0 +1,35 @@
+/*Simple Selectors: all elements (p) on the page will be affected.*/
+p {
+    text-align: center;
+    color: red;
+  }
+  
+  /*ID Selectors: the rule will be applied to the element with that ID.*/
+  #para1 {
+    text-align: center;
+    color: red;
+  }
+  
+  /*Class Selectors: the rule will be applied to the elements that belong to that class*/
+  .center {
+    text-align: center;
+    color: red;
+  }
+  
+  /*Specific Selectors: Helps to just affect specific HTML elements*/
+  p.center {
+    text-align: center;
+    color: red;
+  }
+  
+  /*Universal Selectors: Al the HTML elements*/
+  * {
+    text-align: center;
+    color: blue;
+  }
+  
+  /*Grouping Selectors: HTML elements with the same style definitions.*/
+  h1, h2, p {
+    text-align: center;
+    color: red;
+  }

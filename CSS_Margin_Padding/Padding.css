@@ -1,0 +1,19 @@
+p {
+    padding: 25px 50px 75px 100px;/*T-R-B-L*/
+    padding: 25px 50px 75px;/*T-(R/L)-B*/
+    padding: 25px 50px;/*(HEIGTH)-(WIDTH)*/
+    padding: 25px; /*ALL*/
+  }
+
+
+  div.ex1 {
+    width: 300px;
+    background-color: yellow;
+  }
+  
+  div.ex2 {
+    width: 300px;
+    padding: 25px;
+    box-sizing: border-box;/*we use this to don't increase the width of the div*/
+    background-color: lightblue;
+  }

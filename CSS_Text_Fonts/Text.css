@@ -1,0 +1,46 @@
+body {
+	/*COLOR*/
+  background-color: lightgrey;
+  color: blue;
+  /*HORIZONTAL ALIGN*/
+  text-align: center; /*center, left, right, justify*/
+  text-align-last: right; /*just last line of the text*/
+}
+/*VERTICAL ALIGN*/
+img.a {
+  vertical-align: baseline;/*baseline, text-top, super, text-bottom, sub*/
+}
+/*DECORATION*/
+h1 {
+  text-decoration: overline; /*oveline, line-through, underline, overline underline*/
+  text-decoration-color: green;
+  text-decoration-style: solid; /*solid, double, dotted, dashed, wavy*/
+  text-decoration-thickness: auto; /*auto, 5px, 25%*/
+  /*SHORTHAND*/
+  text-decoration: underline red double 5px;
+ }
+ /*TIP FOR LINKS: avoid underline hiperlinks*/
+ a {
+  text-decoration: none;
+}
+/*TRANSFORM*/
+p.uppercase {
+  text-transform: uppercase; /*uppercase, lowercase, capitalize*/
+}
+/*SPACING*/
+p {
+  text-indent: 50px;/*IDENTATION/TABULATION IN THE FIRST LINE*/
+  letter-spacing: 5px;/*SPACE BETWEEN LETTERS*/
+  line-height: 0.7;/*SPACE BETWEEN LINES, DEFAULT 1.0*/
+  word-spacing: 10px;/*SPACE BETWEEN WORDS*/
+  white-space: nowrap;/*NOT ADJUSTABLE, IT CONTINUES IT´S LINE*/
+}
+/*SHADOW*/
+h1 {
+  text-shadow: 2px 2px;
+  text-shadow: 2px 2px red;
+  text-shadow: 2px 2px 5px red; /*BLUR EFFECT*/
+  
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}

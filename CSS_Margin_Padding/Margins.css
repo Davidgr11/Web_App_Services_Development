@@ -1,0 +1,9 @@
+p {
+    margin: 25px 50px 75px 100px;/*T-R-B-L*/
+    margin: 25px 50px 75px;/*T-(R/L)-B*/
+    margin: 25px 50px;/*(HEIGTH)-(WIDTH)*/
+    margin: 25px; /*ALL*/
+    margin: auto; /*to horizontally center the element within its container*/
+    margin-left: inherit;/*inherited from the parent element*/
+    margin: 0 0 2px 0; /*Collapse*/
+  }

@@ -1,0 +1,8 @@
+body {
+    background-color: red;
+    opacity: 0.8;
+  }
+
+p {
+    background-color: hsla(313, 73%, 66%, 0.546);
+}
