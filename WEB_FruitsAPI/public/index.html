@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de BD de frutas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="container-fluid">Agregar fruta</span>
+    </nav>
+    <div style="border:2px solid rgb(16, 180, 128);display: inline-block;padding:20px; align-items: center;">
+        <!--<form id="agregarFruta">
+            <div class="formGroup1">
+                <label for="name">Nombre:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="sci_name">Nombre científico:</label><br>
+                <input type="text" id="sci_name" name="sci_name" required><br>
+                <label for="random_fact">Dato trivial:</label><br>
+                <input type="text" id="random_fact" name="random_fact" required><br><br>
+                <button type="submit" style="background-color: rgb(16, 180, 128);color:white;border-radius: 3px;padding:10px;align-items: center;">Enviar</button><br>
+            </div>
+        </form>-->
+        <form id="agregarFruta" action="submit" method="POST">
+                <label for="name">Nombre:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="sci_name">Nombre científico:</label><br>
+                <input type="text" id="sci_name" name="sci_name" required><br>
+                <label for="random_fact">Dato trivial:</label><br>
+                <input type="text" id="random_fact" name="random_fact" required><br><br>
+                <button type="submit">Enviar</button><br>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('agregarFruta').addEventListener('submit', function(event){
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+
+
+
+            fetch('/submit', {
+                method:'POST',
+                body: formData,
+                headers:{
+                    "Content-Type":"application/x-www-form-urlencoded"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error ', error);
+            });
+        });
+
+    </script>
+</body>
+</html>

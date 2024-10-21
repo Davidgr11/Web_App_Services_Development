@@ -1,0 +1,416 @@
+<!--INTEGRANTES
+DAVID ALEJANDRO GONZÁLEZ ROBLES
+RICARDO ABSALON GÓMEZ JIMÉNEZ-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="icon" href="Images/SalleLogo.png" type="image/x-icon">
+     <title>P2 Frontend con Ajax</title>
+
+  <!--INSERTAMOS INTERNAMENTE EL CÓDIGO DE CSS PARA LOS ESTILOS UTILIZADOS-->
+<style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      body {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          background-image: url(Images/Background01.jpg);
+          background-size: cover;
+      }
+
+      .container-form {
+        display: flex;
+        border-radius: 20px;
+        box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
+        height: 500px;
+        max-width: 900px;
+        transition: all 1s ease;
+        margin: 10px;
+      }
+
+      .information {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background-color: #c7eef3;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      .info-childs {
+        width: 100%;
+        padding: 0 30px;
+      }
+
+      .info-childs h2 {
+        font-size: 2.5rem;
+        color: #333;
+      }
+
+      .info-childs p {
+        margin: 15px 0 ;
+        color: #555;
+      }
+
+      .info-childs input {
+        background-color: transparent;
+        outline: none;
+        border: solid 2px #9191bd;
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: #9191bd;
+        cursor: pointer;
+        transition: background-color .3s ease;
+      }
+
+      .info-childs input:hover {
+        background-color: #9191bd;
+        border: none;
+        color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+      }
+
+      .form-information {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        text-align: center;
+        background-color: #f8f8f8;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+
+      .form-information-childs {
+        padding: 0 30px;
+      }
+
+      .form-information-childs h2 {
+        color: #333;
+        font-size: 2rem;
+      }
+
+      .form-information-childs p {
+        color: #555;
+      }
+
+      .icons {
+        margin: 15px 0;
+      }
+
+      .icons i {
+        border-radius: 50%;
+        padding: 15px;
+        cursor: pointer;
+        margin: 0 10px;
+        color: #9191bd;
+        border: solid thin #9191bd;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+      }
+
+      .icons i:hover {
+        background-color: #c7c7f3;
+        color: #fff;
+      }
+
+      .form {
+        margin: 30px 0 0 0;
+      }
+
+      .form label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        padding: 0 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+      }
+
+      .form label input {
+        width: 100%;
+        padding: 10px;
+        background-color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        color: #333;
+      }
+
+      .form label i {
+        color: #a7a7a7;
+      }
+
+      .form input[type="submit"] {
+        background-color: #9191bd;
+        color: #fff;
+        border-radius: 20px;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        margin-top: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+      }
+
+      .form input[type="submit"]:hover {
+        background-color: #7a7a9a;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      /*RESPONSIVE FORM*/
+
+      @media screen and (max-width:750px) {
+        html {
+          font-size: 12px;
+        }
+      }
+
+      @media screen and (max-width:580px) {
+        html {
+          font-size: 10px;
+        }
+
+        .container-form {
+          height: auto;
+          flex-direction: column;
+        }
+
+        .information {
+          width: 100%;
+          padding: 20px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0;
+        }
+
+        .form-information {
+          width: 100%;
+          padding: 20px;
+          border-bottom-left-radius: 20px;
+          border-top-right-radius: 0;
+        }
+      }
+
+</style>
+</head>
+
+<body>
+<div class="container-form register">
+    <div class="information">
+        <div class="info-childs">
+            <h2>Bienvenido</h2>
+            <p>Por favor Inicia Sesión con tus Credenciales</p>
+            <input type="button" value="Iniciar Sesión" id="sign-in">
+        </div>
+    </div>
+    <div class="form-information">
+        <div class="form-information-childs">
+            <h2>Crear una Cuenta</h2>
+            <form class="form" method="post">
+                <label>
+                    <i class='bx bx-user'></i>
+                    <input type="text" placeholder="Nombre" name="firstname" required>
+                </label>
+                <label>
+                    <i class='bx bx-user'></i>
+                    <input type="text" placeholder="Apellido" name="lastname" required>
+                </label>
+                <label>
+                    <i class='bx bx-user'></i>
+                    <input type="text" placeholder="Usuario" name="username" required>
+                </label>
+                <label>
+                    <i class='bx bx-badge-check'></i>
+                    <input type="text" placeholder="Matrícula" name="id" required>
+                </label>
+                <label>
+                    <i class='bx bx-envelope'></i>
+                    <input type="email" placeholder="Correo Electrónico" name="email" required>
+                </label>
+                <label>
+                    <i class='bx bx-lock-alt'></i>
+                    <input type="password" placeholder="Contraseña" name="pass" required>
+                </label>
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container-form login hide">
+    <div class="information">
+        <div class="info-childs">
+            <h2>¡Bienvenido nuevamente!</h2>
+            <p>Para unirte por favor rellena el formulario</p>
+            <input type="button" value="Registrarse" id="sign-up">
+        </div>
+    </div>
+    <div class="form-information">
+        <div class="form-information-childs">
+            <h2>Iniciar Sesión</h2>
+            <form class="form">
+              <label>
+                <i class='bx bx-user'></i>
+                <input type="text" placeholder="Usuario" name="username" required>
+            </label>
+            <label>
+                <i class='bx bx-lock-alt'></i>
+                <input type="password" placeholder="Contraseña" name="password" required>
+            </label>          
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        </div>
+    </div>
+</div>
+  <!--INSERTAMOS INTERNAMENTE EL CÓDIGO DE JAVASCRIPT PARA LOS EVENTOS Y MANEJO DE LOS ARCHIVOS-->
+<script>
+    const btnSignIn = document.getElementById("sign-in");
+    const btnSignUp = document.getElementById("sign-up");
+    const formRegister = document.querySelector(".register");
+    const formLogin = document.querySelector(".login");
+
+    btnSignIn.addEventListener("click", e => {
+        formRegister.classList.add("hide");
+        formLogin.classList.remove("hide");
+    });
+
+    btnSignUp.addEventListener("click", e => {
+        formLogin.classList.add("hide");
+        formRegister.classList.remove("hide");
+    });
+
+    document.querySelector('.register .form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const username = document.querySelector('.register input[name="username"]').value;
+        const firstName = document.querySelector('.register input[name="firstname"]').value;
+        const lastName = document.querySelector('.register input[name="lastname"]').value;
+        const id = document.querySelector('.register input[name="id"]').value;
+        const email = document.querySelector('.register input[name="email"]').value;
+        const password = document.querySelector('.register input[name="pass"]').value;
+
+        // Calcula el hash SHA256 de la contraseña
+        const hashedPassword = await sha256(password);
+
+        const formData = new FormData();
+        formData.append('token', 'code37');
+        formData.append('id', id);
+        formData.append('username', username);
+        formData.append('pass', hashedPassword); // Utiliza el hash SHA256 de la contraseña
+        formData.append('firstname', firstName);
+        formData.append('lastname', lastName);
+        formData.append('email', email);
+
+        registerUser(formData);
+    });
+
+    async function sha256(str) {
+        const buffer = new TextEncoder("utf-8").encode(str);
+        const hash = await crypto.subtle.digest("SHA-256", buffer);
+        return hex(hash);
+    }
+
+    function hex(buffer) {
+        var hexCodes = [];
+        var view = new DataView(buffer);
+        for (var i = 0; i < view.byteLength; i += 4) {
+            var value = view.getUint32(i);
+            var stringValue = value.toString(16);
+            var padding = '00000000';
+            var paddedValue = (padding + stringValue).slice(-padding.length);
+            hexCodes.push(paddedValue);
+        }
+        return hexCodes.join("");
+    }
+
+    function registerUser(formData) {
+    fetch('http://monsterballgo.com/api/register.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            console.error('Error al registrar usuario:', data.error);
+        } else {
+            console.log('Usuario registrado exitosamente:', data);
+            // Almacena los datos del usuario obtenidos del servidor en el localStorage
+            localStorage.setItem('userData', JSON.stringify(data));   
+        }
+    })
+    .catch(error => {
+        console.error('Error al registrar usuario:', error);
+        localStorage.setItem('userData', JSON.stringify(data));
+    });
+}
+
+    document.querySelector('.login .form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const username = document.querySelector('.login input[name="username"]').value;
+    const password = document.querySelector('.login input[name="password"]').value;
+
+    // Calcula el hash SHA256 de la contraseña
+    const hashedPassword = await sha256(password);
+
+    const formData = new FormData();
+    formData.append('token', 'code37');
+    formData.append('user', username);
+    formData.append('pass', hashedPassword); // Utiliza el hash SHA256 de la contraseña
+
+    loginUser(formData);
+});
+
+function loginUser(formData) {
+    fetch('http://monsterballgo.com/api/login.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            console.error('Error al iniciar sesión:', data.error);
+        } else {
+            console.log('Inicio de sesión exitoso:', data);
+
+            
+
+            // Almacena los datos del usuario obtenidos del servidor en el localStorage
+            localStorage.setItem('userData', JSON.stringify(data));
+
+            localStorage.setItem('userId', data.id);
+            console.log('ID del usuario:', data.id);
+
+            // Redirige al usuario a perfil.html después de un inicio de sesión exitoso
+            window.location.href = "/PRACTICAS_DAVIDGONZALEZ_801CIB_WEBYAPPS/FrontendAjax/perfilFA.html";
+        }
+    })
+    .catch(error => {
+        console.error('Error al iniciar sesión:', error);
+    });
+}
+</script>
+</body>
+</html>

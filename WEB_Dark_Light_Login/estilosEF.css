@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url('otro-background.png');
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.5s ease;
+    height: 100vh;
+    display: flex;
+}
+
+.container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #DF4F30;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #DF4F30;
+}
+
+.btnMode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 10px 20px; /* Ajusta el padding según sea necesario */
+    font-size: 16px; /* Ajusta el tamaño del texto según sea necesario */
+}
+
+.dark-mode .container {
+    background-color: black;
+    color: #fff;
+}
+
+.dark-mode body {
+    background-color: #333;
+}
+
+.dark-mode input[type="submit"]:hover {
+    background-color: #333;
+}
+
+.dark-mode .btnMode button {
+    color: #fff;
+}
+
+.dark-mode .btnMode button:hover {
+    color: #f4f4f4;
+}
